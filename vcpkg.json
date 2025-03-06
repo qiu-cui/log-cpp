@@ -1,0 +1,11 @@
+{
+    "name": "log-cpp",
+    "dependencies": [
+        {
+            "name": "spdlog"
+        },
+        {
+            "name": "sqlitecpp"
+        }
+    ]
+}

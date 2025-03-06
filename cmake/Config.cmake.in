@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+include(CMakeFindDependencyMacro)
+find_dependency(spdlog)
+if(LOGCPP_SUPPORT_SQLITE)
+find_dependency(SQLiteCpp)
+endif()
+include ( "${CMAKE_CURRENT_LIST_DIR}/log-cppTargets.cmake" )
