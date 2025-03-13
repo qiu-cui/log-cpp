@@ -44,7 +44,7 @@ LOGCPP_API void log(LOG_LEVEL_E level, const char *file, int line, const char *f
     va_start(args, fmt);
     std::unique_ptr<std::string> pbuf(new std::string(1024, '\0'));
     int ret = 0;
-    while ((ret = vsnprintf(&(*pbuf)[0], pbuf->size(), fmt, args)) >= static_cast<int>(pbuf->size())) {
+    while ((ret = vsnprintf(&(*pbuf)[0], pbuf->size()-1, fmt, args)) >= static_cast<int>(pbuf->size())) {
         pbuf->resize(pbuf->size() * 2);
         //va_start(args, fmt);
     }
